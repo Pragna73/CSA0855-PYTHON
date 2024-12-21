@@ -1,0 +1,13 @@
+def findSumAndDifference(lst, M, N):
+    if not lst or M <= 0 or N <= 0 or M > len(lst) or N > len(lst):
+        return "Invalid input"
+    sorted_lst = sorted(lst)
+    Mth_max = sorted_lst[-M]
+    Nth_min = sorted_lst[N-1]
+    total_sum = Mth_max + Nth_min
+    difference = Mth_max - Nth_min
+    return total_sum, difference
+lst = [3, 1, 4, 1, 5, 9, 2, 6, 5]
+M, N = 2, 3  # 2nd maximum and 3rd minimum
+result = findSumAndDifference(lst, M, N)
+print(f"Sum: {result[0]}, Difference: {result[1]}")
