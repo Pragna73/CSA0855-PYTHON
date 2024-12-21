@@ -1,0 +1,16 @@
+def calculateShippingCharge(num_items):
+    if num_items <= 0:
+        return 0.00  # No shipping charge for 0 or negative items
+    first_item_cost = 750.00
+    additional_item_cost = 200.00
+    total_cost = first_item_cost + (num_items - 1) * additional_item_cost
+    return total_cost
+try:
+    num_items = int(input("Enter the number of items purchased: "))
+    if num_items < 0:
+        print("Invalid input! Number of items cannot be negative.")
+    else:
+        shipping_charge = calculateShippingCharge(num_items)
+        print(f"The shipping charge for {num_items} item(s) is: {shipping_charge:.2f}")
+except ValueError:
+    print("Invalid input! Please enter a valid number.")
