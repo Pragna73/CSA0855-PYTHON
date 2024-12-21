@@ -1,0 +1,14 @@
+def isMirrorNumber(num):
+    mirror_map = {'0': '0', '1': '1', '8': '8', '6': '9', '9': '6'}
+    mirrored = []
+    for digit in reversed(num):
+        if digit not in mirror_map:
+            return False  # If a digit cannot be mirrored
+        mirrored.append(mirror_map[digit])
+    mirrored_number = ''.join(mirrored)
+    return mirrored_number == num
+number = input("Enter the number presented by Raju: ")
+if isMirrorNumber(number):
+    print("Yes, the number can be reversed to become a Mirror number!")
+else:
+    print("No, the number cannot be reversed to become a Mirror number.")
