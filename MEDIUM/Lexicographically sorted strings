@@ -1,0 +1,8 @@
+def countVowelStrings(n):
+    dp = [1, 1, 1, 1, 1]  
+    for _ in range(2, n + 1):
+        for j in range(3, -1, -1): 
+            dp[j] += dp[j + 1]
+    return sum(dp)
+n = 3
+print(f"Number of lexicographically sorted vowel strings of length {n}: {countVowelStrings(n)}")
